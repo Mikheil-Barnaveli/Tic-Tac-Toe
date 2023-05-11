@@ -12,6 +12,21 @@ body{
     justify-content: center;
 }
 #game-board{
-    width: 12rem;
-    height: 12rem;
+    width: 24rem;
+    height: 24rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.box{
+    width: 7.9rem;
+    height: 7.9rem;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
 }
