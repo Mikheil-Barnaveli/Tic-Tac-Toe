@@ -2,10 +2,11 @@ const body = document.querySelector('body');
 const gamebox = document.getElementById('game-box');
 const box = document.querySelectorAll('.box')
 const restart = document.getElementById('reset');
+const result = document.getElementById('result');
 
-
-const result = document.createElement('h1');
-body.appendChild(result);
+// const result = document.createElement('h1');
+// result.style.display = 'none'
+// result.textContent = '';
 let playerX = true;
 console.dir(box);
 
@@ -27,14 +28,17 @@ function checkGameState() {
     let [a, b, c] = winConditions[i];
     if (boxValues[a] && boxValues[a] === boxValues[b] && boxValues[a] === boxValues[c]) {
       console.log(`Winner: ${boxValues[a]}`);
+      console.dir(result);
       result.textContent = `Winner: ${boxValues[a]}`;
       result.style.fontSize = '4rem'
+      // result.style.display = 'block'
       // check for a winner
       return boxValues[a];
     }
   }
   if (boxValues.every((cell) => cell !== "")) {
     // check for a tie
+    result.textContent = "Tie"
     console.log("Tie");
     return "tie";
   }
@@ -70,8 +74,6 @@ function restartGame() {
   // gamebox.classList.remove('winner');
 }
 
-
-
 // add event listeners to the box
 box.forEach(box => {
   box.addEventListener('click', boxClick);
@@ -94,14 +96,16 @@ box.forEach(function(box) {
         box.textContent = 'X'
         playerX = false;
         box.style.pointerEvents = "none";
-        checkGameState()
-        checkGameOver()
+        // checkGameState()
+        // checkGameOver()
     }else{
         box.textContent = 'O'
         playerX = true;
         box.style.pointerEvents = "none";
-        checkGameState()
-        checkGameOver()
+        // checkGameState()
+        // checkGameOver()
     }
+    checkGameState()
+        checkGameOver()
 })
 })
