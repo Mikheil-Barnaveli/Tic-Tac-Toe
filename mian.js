@@ -21,9 +21,9 @@ box.forEach(function(box) {
 
             for( let i = 0; i < box.length; i++){
 
-                if (box[0].textContent === box[1].textContent && box[1].textContent === box[2].textContent && box[0].textContent !== '') {
-                            console.log("winner");
-                            return box[0];
+                if (box[0].textContent === box[1].textContent && box[1].textContent === box[2].textContent && box[0].textContent !== " ") {
+                console.log("winner");
+                return box[0];
                 }
 
 
