@@ -30,31 +30,27 @@ function checkGameState() {
   ]; // all winning combinations
 
   for (let i = 0; i < winConditions.length; i++) {
-    // console.log(i, "i garet");
     let [a, b, c] = winConditions[i];
     if (boxValues[a] == "X" || boxValues[a] == "O") {
       if (boxValues[a] === boxValues[b] && boxValues[a] === boxValues[c]) {
-        // console.log(i, "i shignit");
-        // console.log(boxValues);
-        // console.log(a, "a")
-        // console.log(boxValues[a])
         console.log(`Winner: ${boxValues[a]}`);
         result.textContent = `Winner: ${boxValues[a]}`;
         // check for a winner
         return boxValues[a];
+
       }
 
     }
-    
-  }
-  console.log(result, "result1");
-  if (boxValues.every((cell) => cell !== "")) {
-    // check for a tie
-    result.textContent = "Tie"
-    console.log("Tie");
-    return "tie";
-  }
-
+    if (boxValues[a] == "X" || boxValues[a] == "O") {
+    if (boxValues.every((cell) => cell !== "")) {
+      // check for a tie
+      result.textContent = "Tie"
+      console.log("Tie");
+      return "tie";
+    }
+    }
+    }
+  
   return null; // Game is not finished yet
 }
 
@@ -82,8 +78,6 @@ function restartGame() {
     box.style.pointerEvents = 'auto';
   });
 
-  // // Remove winner class from gamebox
-  // gamebox.classList.remove('winner');
 }
 
 // add event listeners to the box
