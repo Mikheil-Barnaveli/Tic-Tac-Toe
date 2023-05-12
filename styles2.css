@@ -42,8 +42,36 @@ body {
   font-size: 5rem;
   font-family: "Braah One", sans-serif;
   text-align: center;
+  background: #1F3641;
+  box-shadow: inset 0px -8px 0px #10212A;
+  border-radius: 15px;
+}
+
+#score {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+#score .score-divs {
+  height: 72px;
+  width: 7.9rem;
+  left: 491px;
+  top: 690px;
+  border-radius: 15px;
 }
 
 h1 {
   font-size: 4rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
 }/*# sourceMappingURL=styles2.css.map */

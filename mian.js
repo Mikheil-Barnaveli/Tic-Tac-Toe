@@ -5,8 +5,18 @@ const restart = document.getElementById('reset');
 const result = document.getElementById('result');
 const start = document.getElementById('start');
 const theGame = document.getElementById('the-game');
+const scoreX =document.getElementById('x-score');
+const scoreTie =document.getElementById('tie-score');
+const scoreO =document.getElementById('o-score');
 
 
+let counterX = 0;
+let counterTie = 0;
+let counterO = 0;
+
+scoreX.textContent = counterX;
+scoreTie.textContent = counterTie;
+scoreO.textContent = counterO;
 
 start.addEventListener('click', () => {
   start.style.display = 'none'
@@ -35,9 +45,18 @@ function checkGameState() {
       if (boxValues[a] === boxValues[b] && boxValues[a] === boxValues[c]) {
         console.log(`Winner: ${boxValues[a]}`);
         result.textContent = `Winner: ${boxValues[a]}`;
+        console.log(counterX);
+        console.log(counterO);
+        if(boxValues[a] == "X"){
+          counterX += 1
+        }
+        if(boxValues[a] == "O"){
+          counterO += 1
+        }
+        console.log(counterX);
+        console.log(counterO);
         // check for a winner
         return boxValues[a];
-
       }
 
     }
@@ -45,6 +64,7 @@ function checkGameState() {
     if (boxValues.every((cell) => cell !== "")) {
       // check for a tie
       result.textContent = "Tie"
+      counterTie + 1
       console.log("Tie");
       return "tie";
     }
@@ -100,6 +120,8 @@ box.forEach(function (box) {
   box.addEventListener('click', () => {
     if (playerX == true) {
       box.textContent = 'X'
+      box.style.color = '#31C3BD'
+
       playerX = false;
       box.style.pointerEvents = "none";
       checkGameState()
@@ -107,6 +129,7 @@ box.forEach(function (box) {
     } else {
       box.textContent = 'O'
       playerX = true;
+      box.style.color = '#F2B137'
       box.style.pointerEvents = "none";
       checkGameState()
       checkGameOver()
