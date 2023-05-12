@@ -19,18 +19,6 @@ box.forEach(function(box) {
     }
     function checkGameState() {
 
-        box.addEventListener('click', ()=>{
-            if(playerX == true){
-                box.textContent = 'X'
-                playerX = false;
-                box.style.pointerEvents = "none";
-            }else{
-                box.textContent = 'O'
-                playerX = true;
-                box.style.pointerEvents = "none";
-            }
-        })
-
         const boxValues = Array.from(box).map((cell) => cell.textContent); // Get an array of the current values in each cell
         const winConditions = [
           [0, 1, 2],
