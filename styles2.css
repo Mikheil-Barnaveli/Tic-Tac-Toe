@@ -31,9 +31,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
-}
-#game-board .box .box:disabled {
-  background-color: #ccc;
-  color: black;
+  font-size: 5rem;
+  font-family: "Braah One", sans-serif;
+  text-align: center;
 }/*# sourceMappingURL=styles2.css.map */

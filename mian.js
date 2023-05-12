@@ -6,12 +6,12 @@ const restart = document.getElementById('reset');
 
 const result = document.createElement('h1');
 body.appendChild(result);
-
+let playerX = true;
 console.dir(box);
 
 //CHECK WINNER
 function checkGameState() {
-  const boxValues = Array.from(box).map((cell) => cell.textContent); 
+  const boxValues = Array.from(box).map((cell) => cell.textContent);
   const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -80,11 +80,12 @@ box.forEach(box => {
 restart.addEventListener('click', ()=>{
   for (let i = 0; i < box.length; i++) {
     result.textContent = '';
+    playerX = true;
     restartGame()
   }
 })
 
-let playerX = true;
+
 box.forEach(function(box) {
   
         
