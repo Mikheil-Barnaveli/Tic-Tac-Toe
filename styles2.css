@@ -13,7 +13,15 @@ body {
   justify-content: center;
 }
 
-#game-board {
+#the-game {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#the-game #game-board {
   width: 24rem;
   height: 24rem;
   display: flex;
@@ -22,7 +30,7 @@ body {
   justify-content: center;
   align-content: center;
 }
-#game-board .box {
+#the-game #game-board .box {
   width: 7.9rem;
   height: 7.9rem;
   border: 2px solid black;
