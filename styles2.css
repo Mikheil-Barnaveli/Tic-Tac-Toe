@@ -52,6 +52,7 @@ body {
   background: #1F3641;
   box-shadow: inset 0px -8px 0px #10212A;
   border-radius: 15px;
+  padding: 1.25rem;
 }
 
 #score {
@@ -120,6 +121,10 @@ p {
   border-radius: 10px;
   border: none;
 }
+#result-div #reset2 #reset2:hover {
+  background: #FFC860;
+  box-shadow: inset 0px -4px 0px #CC8B13;
+}
 #result-div #quit {
   width: 7rem;
   height: 3.5rem;
@@ -129,6 +134,22 @@ p {
   color: #1A2A33;
   border: none;
   font-weight: 700;
+  font-size: 1.5rem;
+}
+#result-div #quit #quit:hover {
+  background: #DBE8ED;
+  box-shadow: inset 0px -4px 0px #6B8997;
+}
+
+#in-game-menu {
+  width: 25rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 #reset {
@@ -139,6 +160,17 @@ p {
   border-radius: 10px;
   border: none;
   color: #1A2A33;
+}
+
+#quit2 {
+  width: 5rem;
+  height: 2.5rem;
+  background: #A8BFC9;
+  box-shadow: inset 0px -4px 0px #6B8997;
+  border-radius: 10px;
+  border: none;
+  color: #1A2A33;
+  font-weight: 700;
 }
 
 button:hover {
@@ -176,4 +208,17 @@ button:hover {
   background: #F2B137;
   box-shadow: inset 0px -8px 0px #CC8B13;
   border-radius: 15px;
+}
+
+#game-title {
+  font-size: 4rem;
+}
+#game-title #tic {
+  color: #31C3BD;
+}
+#game-title #tac {
+  color: #F2B137;
+}
+#game-title #toe {
+  color: #A8BFC9;
 }/*# sourceMappingURL=styles2.css.map */

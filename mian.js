@@ -11,7 +11,9 @@ const scoreX =document.getElementById('x-score');
 const scoreTie =document.getElementById('tie-score');
 const scoreO =document.getElementById('o-score');
 const resultAlert = document.getElementById('result-div');
-const quit = document.getElementById('quit')
+const quit = document.getElementById('quit');
+const quit2 = document.getElementById('quit2');
+const gameTitle = document.getElementById('game-title');
 
 let counterX = 0;
 let counterTie = 0;
@@ -25,6 +27,7 @@ start.addEventListener('click', () => {
   start.style.display = 'none'
   startCpu.style.display = 'none'
   theGame.style.display = 'flex'
+  gameTitle.style.display = 'none'
   playerVsPlayer()
 })
 
@@ -32,6 +35,7 @@ startCpu.addEventListener('click', () => {
   startCpu.style.display = 'none'
   start.style.display = 'none'
   theGame.style.display = 'flex'
+  gameTitle.style.display = 'none'
 })
 
 console.dir(box);
@@ -63,10 +67,12 @@ function checkGameState() {
         if(boxValues[a] == "X"){
           counterX += 1
           resultAlert.style.display = 'flex'
+          result.style.color = '#31C3BD'
         }
         if(boxValues[a] == "O"){
           counterO += 1
           resultAlert.style.display = 'flex'
+          result.style.color = '#F2B137'
         }
         
         console.log(counterX, "X WIN");
@@ -83,6 +89,7 @@ function checkGameState() {
       result.textContent = "Tie"
       counterTie += 1
       resultAlert.style.display = 'flex'
+      result.style.color = '#A8BFC9'
       return "tie";
     }
     }
@@ -148,6 +155,19 @@ quit.addEventListener('click', ()=>{
   startCpu.style.display = 'block'
   start.style.display = 'block'
   theGame.style.display = 'none'
+  gameTitle.style.display = 'block'
+})
+quit2.addEventListener('click', ()=>{
+  result.textContent = '';
+  playerX = true;
+  restartGame()
+  counterX = 0;
+  counterTie = 0;
+  counterO = 0;
+  startCpu.style.display = 'block'
+  start.style.display = 'block'
+  theGame.style.display = 'none'
+  gameTitle.style.display = 'block'
 })
 
 box.forEach(function (box) {
