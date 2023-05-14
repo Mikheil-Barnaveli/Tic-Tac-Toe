@@ -14,16 +14,16 @@ let counterX = 0;
 let counterTie = 0;
 let counterO = 0;
 
-scoreX.textContent = counterX;
-scoreTie.textContent = counterTie;
-scoreO.textContent = counterO;
+// scoreX.textContent = counterX;
+// scoreTie.textContent = counterTie;
+// scoreO.textContent = counterO;
 
 start.addEventListener('click', () => {
   start.style.display = 'none'
   theGame.style.display = 'flex'
 })
 let playerX = true;
-console.dir(box);
+// console.dir(box);
 
 //CHECK WINNER
 function checkGameState() {
@@ -41,20 +41,22 @@ function checkGameState() {
 
   for (let i = 0; i < winConditions.length; i++) {
     let [a, b, c] = winConditions[i];
+    scoreX.textContent = counterX;
+    scoreTie.textContent = counterTie;
+    scoreO.textContent = counterO;
+
     if (boxValues[a] == "X" || boxValues[a] == "O") {
       if (boxValues[a] === boxValues[b] && boxValues[a] === boxValues[c]) {
-        console.log(`Winner: ${boxValues[a]}`);
+        // console.log(`Winner: ${boxValues[a]}`);
         result.textContent = `Winner: ${boxValues[a]}`;
-        console.log(counterX);
-        console.log(counterO);
         if(boxValues[a] == "X"){
           counterX += 1
         }
         if(boxValues[a] == "O"){
           counterO += 1
         }
-        console.log(counterX);
-        console.log(counterO);
+        console.log(counterX, "X WIN");
+        console.log(counterO, "O WIN");
         // check for a winner
         return boxValues[a];
       }
@@ -64,12 +66,14 @@ function checkGameState() {
     if (boxValues.every((cell) => cell !== "")) {
       // check for a tie
       result.textContent = "Tie"
-      counterTie + 1
-      console.log("Tie");
+      counterTie += 1
+      console.log(counterTie, "TIE GAME");
+      // console.log("Tie");
       return "tie";
     }
     }
     }
+    
   
   return null; // Game is not finished yet
 }
