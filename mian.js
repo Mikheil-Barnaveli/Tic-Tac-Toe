@@ -2,6 +2,7 @@ const body = document.querySelector('body');
 const gamebox = document.getElementById('game-box');
 const box = document.querySelectorAll('.box')
 const restart = document.getElementById('reset');
+const restart2 = document.getElementById('reset2');
 const result = document.getElementById('result');
 const start = document.getElementById('start-PVP');
 const startCpu = document.getElementById('start-CPU')
@@ -9,7 +10,7 @@ const theGame = document.getElementById('the-game');
 const scoreX =document.getElementById('x-score');
 const scoreTie =document.getElementById('tie-score');
 const scoreO =document.getElementById('o-score');
-
+const resultAlert = document.getElementById('result-div')
 
 let counterX = 0;
 let counterTie = 0;
@@ -60,9 +61,11 @@ function checkGameState() {
         result.textContent = `Winner: ${boxValues[a]}`;
         if(boxValues[a] == "X"){
           counterX += 1
+          resultAlert.style.display = 'flex'
         }
         if(boxValues[a] == "O"){
           counterO += 1
+          resultAlert.style.display = 'flex'
         }
         
         console.log(counterX, "X WIN");
@@ -126,7 +129,14 @@ restart.addEventListener('click', () => {
     restartGame()
   }
 })
-
+restart2.addEventListener('click', () => {
+  for (let i = 0; i < box.length; i++) {
+    result.textContent = '';
+    playerX = true;
+    resultAlert.style.display = 'none'
+    restartGame()
+  }
+})
 
 box.forEach(function (box) {
 

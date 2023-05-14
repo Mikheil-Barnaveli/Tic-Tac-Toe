@@ -14,22 +14,27 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #1A2A33;
+  position: relative;
 }
 #the-game{
-  width: 100%;
-  height: 100%;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #1A2A33;
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
     #game-board{
-    width: 24rem;
-    height: 24rem;
+    width: 25rem;
+    height: 25rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-between;
+    align-content: space-between;
+
       .box{
         width: 7.9rem;
         height: 7.9rem;
@@ -50,24 +55,25 @@ body{
 }
 
 #score{
+  width: 25rem;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   .score-divs{
     height: 72px;
     width: 7.9rem;
     left: 491px;
     top: 690px;
     border-radius: 15px;
+    color: #1A2A33;
   }
 }
 
 
-h1{
-  font-size: 4rem;
-}
+
 h2{
   text-align: center;
 }
@@ -75,4 +81,47 @@ p{
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
+}
+#result-div{
+  width: 100%;
+  height: 25%;
+  border: 2px solid black;
+  background-color: #10212A;
+  display: none;
+  z-index: 1;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h1{
+  height: fit-content;
+  width: fit-content;
+  font-size: 4rem;
+  color: #F2B137;
+  text-align: center;
+  }
+  #reset2{
+    width: 7rem;
+    height: 3.5rem;
+    background-color: #F2B137;
+    color: black;
+  }
+}
+#reset{
+  width: 5rem;
+  height: 2.5rem;
+  background-color: #F2B137;
+  color: black;
+}
+button:hover{
+  cursor: pointer;
+}
+#x-wins{
+background-color: #31C3BD;
+}
+#tie{
+background-color: whitesmoke;
+}
+#o-wins{
+background-color: #F2B137;
 }
