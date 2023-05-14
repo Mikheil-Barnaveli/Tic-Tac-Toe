@@ -3,7 +3,8 @@ const gamebox = document.getElementById('game-box');
 const box = document.querySelectorAll('.box')
 const restart = document.getElementById('reset');
 const result = document.getElementById('result');
-const start = document.getElementById('start');
+const start = document.getElementById('start-PVP');
+const startCpu = document.getElementById('start-CPU')
 const theGame = document.getElementById('the-game');
 const scoreX =document.getElementById('x-score');
 const scoreTie =document.getElementById('tie-score');
@@ -20,10 +21,23 @@ let counterO = 0;
 
 start.addEventListener('click', () => {
   start.style.display = 'none'
+  startCpu.style.display = 'none'
+  theGame.style.display = 'flex'
+  playerVsPlayer()
+})
+
+startCpu.addEventListener('click', () => {
+  startCpu.style.display = 'none'
+  start.style.display = 'none'
   theGame.style.display = 'flex'
 })
+
+  
+
+
+
+function playerVsPlayer(){
 let playerX = true;
-// console.dir(box);
 
 //CHECK WINNER
 function checkGameState() {
@@ -41,13 +55,9 @@ function checkGameState() {
 
   for (let i = 0; i < winConditions.length; i++) {
     let [a, b, c] = winConditions[i];
-    scoreX.textContent = counterX;
-    scoreTie.textContent = counterTie;
-    scoreO.textContent = counterO;
 
     if (boxValues[a] == "X" || boxValues[a] == "O") {
       if (boxValues[a] === boxValues[b] && boxValues[a] === boxValues[c]) {
-        // console.log(`Winner: ${boxValues[a]}`);
         result.textContent = `Winner: ${boxValues[a]}`;
         if(boxValues[a] == "X"){
           counterX += 1
@@ -68,7 +78,6 @@ function checkGameState() {
       result.textContent = "Tie"
       counterTie += 1
       console.log(counterTie, "TIE GAME");
-      // console.log("Tie");
       return "tie";
     }
     }
@@ -130,6 +139,10 @@ box.forEach(function (box) {
       box.style.pointerEvents = "none";
       checkGameState()
       checkGameOver()
+
+      scoreX.textContent = counterX;
+      scoreTie.textContent = counterTie;
+      scoreO.textContent = counterO;
     } else {
       box.textContent = 'O'
       playerX = true;
@@ -137,6 +150,11 @@ box.forEach(function (box) {
       box.style.pointerEvents = "none";
       checkGameState()
       checkGameOver()
+
+      scoreX.textContent = counterX;
+      scoreTie.textContent = counterTie;
+      scoreO.textContent = counterO;
     }
   })
 })
+}
