@@ -32,8 +32,7 @@ startCpu.addEventListener('click', () => {
   theGame.style.display = 'flex'
 })
 
-  
-
+console.dir(box);
 
 
 function playerVsPlayer(){
@@ -65,8 +64,10 @@ function checkGameState() {
         if(boxValues[a] == "O"){
           counterO += 1
         }
+        
         console.log(counterX, "X WIN");
         console.log(counterO, "O WIN");
+        
         // check for a winner
         return boxValues[a];
       }
@@ -139,10 +140,11 @@ box.forEach(function (box) {
       box.style.pointerEvents = "none";
       checkGameState()
       checkGameOver()
-
+      
       scoreX.textContent = counterX;
       scoreTie.textContent = counterTie;
       scoreO.textContent = counterO;
+
     } else {
       box.textContent = 'O'
       playerX = true;
