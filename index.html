@@ -10,12 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
     <script src="mian.js" defer></script>
 </head>
 <body>
 
-    <button id="start-CPU">NEW GAME (VS CPU)</button>
-    <button id="start-PVP">NEW GAME (VS PLAYER)</button>
+    <button id="start-CPU" class="start-button">NEW GAME (VS CPU)</button>
+    <button id="start-PVP" class="start-button">NEW GAME (VS PLAYER)</button>
 
 
     <div id="the-game">
@@ -48,7 +51,10 @@
 
     <div id="result-div">
         <h1 id="result"></h1>
+        <div id="result-div-buttons">
+        <button id="quit">QUIT</button>
         <button id="reset2"><img src="./img/reset.png" alt="reset"></button>
+        </div>
     </div>
     </div>
 </body>

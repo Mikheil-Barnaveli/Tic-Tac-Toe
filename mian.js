@@ -10,7 +10,8 @@ const theGame = document.getElementById('the-game');
 const scoreX =document.getElementById('x-score');
 const scoreTie =document.getElementById('tie-score');
 const scoreO =document.getElementById('o-score');
-const resultAlert = document.getElementById('result-div')
+const resultAlert = document.getElementById('result-div');
+const quit = document.getElementById('quit')
 
 let counterX = 0;
 let counterTie = 0;
@@ -81,7 +82,7 @@ function checkGameState() {
       // check for a tie
       result.textContent = "Tie"
       counterTie += 1
-      console.log(counterTie, "TIE GAME");
+      resultAlert.style.display = 'flex'
       return "tie";
     }
     }
@@ -136,6 +137,17 @@ restart2.addEventListener('click', () => {
     resultAlert.style.display = 'none'
     restartGame()
   }
+})
+quit.addEventListener('click', ()=>{
+  result.textContent = '';
+  playerX = true;
+  restartGame()
+  counterX = 0;
+  counterTie = 0;
+  counterO = 0;
+  startCpu.style.display = 'block'
+  start.style.display = 'block'
+  theGame.style.display = 'none'
 })
 
 box.forEach(function (box) {

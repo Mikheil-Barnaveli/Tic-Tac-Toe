@@ -5,6 +5,7 @@ $myFont: 'Braah One', sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Outfit', sans-serif;
 }
 
 body{
@@ -16,6 +17,8 @@ body{
   justify-content: center;
   background-color: #1A2A33;
   position: relative;
+  gap: 1rem;
+  font-family: 'Outfit', sans-serif;
 }
 #the-game{
   width: 100dvw;
@@ -100,18 +103,41 @@ p{
   color: #F2B137;
   text-align: center;
   }
+  #result-div-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
   #reset2{
     width: 7rem;
     height: 3.5rem;
-    background-color: #F2B137;
-    color: black;
+    color: #1A2A33;
+    background: #F2B137;
+    box-shadow: inset 0px -4px 0px #CC8B13;
+    border-radius: 10px;
+    border: none;
+  }
+  #quit{
+    width: 7rem;
+    height: 3.5rem;
+    background: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 10px;
+    color: #1A2A33;
+    border: none;
+    font-weight: 700;
   }
 }
 #reset{
   width: 5rem;
   height: 2.5rem;
-  background-color: #F2B137;
-  color: black;
+  background: #F2B137;
+  box-shadow: inset 0px -4px 0px #CC8B13;
+  border-radius: 10px;
+  border: none;
+  color: #1A2A33;
 }
 button:hover{
   cursor: pointer;
@@ -124,4 +150,25 @@ background-color: whitesmoke;
 }
 #o-wins{
 background-color: #F2B137;
+
+}
+
+.start-button{
+  width: 15rem;
+  height: 3rem;
+  color: #1A2A33;
+  font-weight: 700;
+  border: none;
+  text-align: center;
+}
+#start-PVP{
+  background: #31C3BD;
+  box-shadow: inset 0px -8px 0px #118C87;
+  border-radius: 15px;
+}
+  
+#start-CPU{
+  background: #F2B137;
+  box-shadow: inset 0px -8px 0px #CC8B13;
+  border-radius: 15px;
 }
