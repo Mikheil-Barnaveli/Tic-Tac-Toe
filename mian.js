@@ -19,16 +19,18 @@ let counterX = 0;
 let counterTie = 0;
 let counterO = 0;
 
-// scoreX.textContent = counterX;
-// scoreTie.textContent = counterTie;
-// scoreO.textContent = counterO;
 
 start.addEventListener('click', () => {
   start.style.display = 'none'
   startCpu.style.display = 'none'
   theGame.style.display = 'flex'
   gameTitle.style.display = 'none'
-  playerVsPlayer()
+  counterX = 0;
+  counterTie = 0;
+  counterO = 0;
+  scoreX.textContent = counterX;
+  scoreTie.textContent = counterTie;
+  scoreO.textContent = counterO;
 })
 
 startCpu.addEventListener('click', () => {
@@ -41,7 +43,7 @@ startCpu.addEventListener('click', () => {
 console.dir(box);
 
 
-function playerVsPlayer(){
+
 let playerX = true;
 
 //CHECK WINNER
@@ -156,6 +158,7 @@ quit.addEventListener('click', ()=>{
   start.style.display = 'block'
   theGame.style.display = 'none'
   gameTitle.style.display = 'block'
+  resultAlert.style.display = 'none'
 })
 quit2.addEventListener('click', ()=>{
   result.textContent = '';
@@ -168,6 +171,7 @@ quit2.addEventListener('click', ()=>{
   start.style.display = 'block'
   theGame.style.display = 'none'
   gameTitle.style.display = 'block'
+  resultAlert.style.display = 'none'
 })
 
 box.forEach(function (box) {
@@ -201,4 +205,3 @@ box.forEach(function (box) {
     }
   })
 })
-}
